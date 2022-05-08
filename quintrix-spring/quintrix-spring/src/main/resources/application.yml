@@ -1,0 +1,22 @@
+ spring:
+   jpa:
+     show-sql: true
+     hibernate:
+       ddl-auto: none
+   datasource:
+     url: jdbc:mysql://localhost:3306/JDBCDemo
+     username: root
+     password: root
+     driver-class-name: com.mysql.cj.jdbc.Driver
+    
+ agentService:
+   getURL: https://gorest.co.in/public/v2/users
+   
+ logging:
+   level:
+     org.springframework: ERROR
+     com.quintrix: DEBUG
+   pattern:
+     console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+     file: "%d %p %c{1.} [%t] %m%n"
+   file: /tmp/app.log
