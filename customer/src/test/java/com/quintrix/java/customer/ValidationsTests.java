@@ -1,5 +1,6 @@
 package com.quintrix.java.customer;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -13,7 +14,7 @@ import org.mockito.Mockito;
 public class ValidationsTests {
 	
 	@Mock
-	List<String> strList;
+	List<String> strList = new ArrayList<>();
 	
 	@Test
 	public void validateEmailForAt() {
@@ -36,7 +37,10 @@ public class ValidationsTests {
 	
 	@Test 
 	void validateListPositiveCase() {
-	    Mockito.when(strList.size()).thenReturn(120);
-		assertTrue(Validations.validList(strList));
+	    List <String> strListMock = Mockito.mock(List.class);
+	    Mockito.when(strListMock.size()).thenReturn(120);
+	    //System.out.println(strListMock.size());
+	    //assertEquals(120, strListMock.size());
+	    assertTrue(Validations.validList(strListMock));
 	}
 }
